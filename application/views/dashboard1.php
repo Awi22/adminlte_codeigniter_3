@@ -468,7 +468,7 @@
                         </li>
                         <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="<?php echo base_url(); ?>calendar" class="nav-link">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Calendar

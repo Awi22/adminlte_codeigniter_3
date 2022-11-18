@@ -4,68 +4,75 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 3</title>
+    <title>AdminLTE 3 | Calendar</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
 
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/fullcalendar/main.css">
 
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/css/adminlte.min.css?v=3.2.0">
-    <script nonce="eeb235e4-5ab1-486c-90bd-d71fb6f86c20">
+    <script nonce="eab4b0a4-af8f-403a-9b25-ea1f2424aded">
         (function(w, d) {
-            ! function(Z, _, ba, bb) {
-                Z.zarazData = Z.zarazData || {};
-                Z.zarazData.executed = [];
-                Z.zaraz = {
+            ! function(e, f, g, h) {
+                e.zarazData = e.zarazData || {};
+                e.zarazData.executed = [];
+                e.zaraz = {
                     deferred: [],
                     listeners: []
                 };
-                Z.zaraz.q = [];
-                Z.zaraz._f = function(bc) {
+                e.zaraz.q = [];
+                e.zaraz._f = function(i) {
                     return function() {
-                        var bd = Array.prototype.slice.call(arguments);
-                        Z.zaraz.q.push({
-                            m: bc,
-                            a: bd
+                        var j = Array.prototype.slice.call(arguments);
+                        e.zaraz.q.push({
+                            m: i,
+                            a: j
                         })
                     }
                 };
-                for (const be of ["track", "set", "debug"]) Z.zaraz[be] = Z.zaraz._f(be);
-                Z.zaraz.init = () => {
-                    var bf = _.getElementsByTagName(bb)[0],
-                        bg = _.createElement(bb),
-                        bh = _.getElementsByTagName("title")[0];
-                    bh && (Z.zarazData.t = _.getElementsByTagName("title")[0].text);
-                    Z.zarazData.x = Math.random();
-                    Z.zarazData.w = Z.screen.width;
-                    Z.zarazData.h = Z.screen.height;
-                    Z.zarazData.j = Z.innerHeight;
-                    Z.zarazData.e = Z.innerWidth;
-                    Z.zarazData.l = Z.location.href;
-                    Z.zarazData.r = _.referrer;
-                    Z.zarazData.k = Z.screen.colorDepth;
-                    Z.zarazData.n = _.characterSet;
-                    Z.zarazData.o = (new Date).getTimezoneOffset();
-                    Z.zarazData.q = [];
-                    for (; Z.zaraz.q.length;) {
-                        const bl = Z.zaraz.q.shift();
-                        Z.zarazData.q.push(bl)
+                for (const k of ["track", "set", "debug"]) e.zaraz[k] = e.zaraz._f(k);
+                e.zaraz.init = () => {
+                    var l = f.getElementsByTagName(h)[0],
+                        m = f.createElement(h),
+                        n = f.getElementsByTagName("title")[0];
+                    n && (e.zarazData.t = f.getElementsByTagName("title")[0].text);
+                    e.zarazData.x = Math.random();
+                    e.zarazData.w = e.screen.width;
+                    e.zarazData.h = e.screen.height;
+                    e.zarazData.j = e.innerHeight;
+                    e.zarazData.e = e.innerWidth;
+                    e.zarazData.l = e.location.href;
+                    e.zarazData.r = f.referrer;
+                    e.zarazData.k = e.screen.colorDepth;
+                    e.zarazData.n = f.characterSet;
+                    e.zarazData.o = (new Date).getTimezoneOffset();
+                    if (e.dataLayer)
+                        for (const r of Object.entries(Object.entries(dataLayer).reduce(((s, t) => ({
+                                ...s[1],
+                                ...t[1]
+                            }))))) zaraz.set(r[0], r[1], {
+                            scope: "page"
+                        });
+                    e.zarazData.q = [];
+                    for (; e.zaraz.q.length;) {
+                        const u = e.zaraz.q.shift();
+                        e.zarazData.q.push(u)
                     }
-                    bg.defer = !0;
-                    for (const bm of [localStorage, sessionStorage]) Object.keys(bm || {}).filter((bo => bo.startsWith("_zaraz_"))).forEach((bn => {
+                    m.defer = !0;
+                    for (const v of [localStorage, sessionStorage]) Object.keys(v || {}).filter((x => x.startsWith("_zaraz_"))).forEach((w => {
                         try {
-                            Z.zarazData["z_" + bn.slice(7)] = JSON.parse(bm.getItem(bn))
+                            e.zarazData["z_" + w.slice(7)] = JSON.parse(v.getItem(w))
                         } catch {
-                            Z.zarazData["z_" + bn.slice(7)] = bm.getItem(bn)
+                            e.zarazData["z_" + w.slice(7)] = v.getItem(w)
                         }
                     }));
-                    bg.referrerPolicy = "origin";
-                    bg.src = "<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(Z.zarazData)));
-                    bf.parentNode.insertBefore(bg, bf)
+                    m.referrerPolicy = "origin";
+                    m.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(e.zarazData)));
+                    l.parentNode.insertBefore(m, l)
                 };
-                ["complete", "interactive"].includes(_.readyState) ? zaraz.init() : Z.addEventListener("DOMContentLoaded", zaraz.init)
+                ["complete", "interactive"].includes(f.readyState) ? zaraz.init() : e.addEventListener("DOMContentLoaded", zaraz.init)
             }(w, d, 0, "script");
         })(window, document);
     </script>
@@ -241,8 +248,8 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -263,7 +270,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url(); ?>dashboard3" class="nav-link active">
+                                    <a href="<?php echo base_url(); ?>dashboard3" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard v3</p>
                                     </a>
@@ -271,7 +278,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>widgets" class="nav-link">
+                            <a href="widgets.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Widgets
@@ -290,49 +297,49 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
+                                    <a href="layout/top-nav.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Top Navigation</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                    <a href="layout/top-nav-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Top Navigation + Sidebar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="layout/boxed.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Boxed</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                    <a href="layout/fixed-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Sidebar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+                                    <a href="layout/fixed-sidebar-custom.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Sidebar <small>+ Custom Area</small></p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                                    <a href="layout/fixed-topnav.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Navbar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-footer.html" class="nav-link">
+                                    <a href="layout/fixed-footer.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Footer</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                                    <a href="layout/collapsed-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Collapsed Sidebar</p>
                                     </a>
@@ -349,25 +356,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="charts/chartjs.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ChartJS</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="charts/flot.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Flot</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="charts/inline.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inline</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/uplot.html" class="nav-link">
+                                    <a href="charts/uplot.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>uPlot</p>
                                     </a>
@@ -384,49 +391,49 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/UI/general.html" class="nav-link">
+                                    <a href="UI/general.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/icons.html" class="nav-link">
+                                    <a href="UI/icons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Icons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/buttons.html" class="nav-link">
+                                    <a href="UI/buttons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Buttons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/sliders.html" class="nav-link">
+                                    <a href="UI/sliders.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sliders</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/modals.html" class="nav-link">
+                                    <a href="UI/modals.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Modals & Alerts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/navbar.html" class="nav-link">
+                                    <a href="UI/navbar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Navbar & Tabs</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/timeline.html" class="nav-link">
+                                    <a href="UI/timeline.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Timeline</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/ribbons.html" class="nav-link">
+                                    <a href="UI/ribbons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Ribbons</p>
                                     </a>
@@ -443,25 +450,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="forms/general.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General Elements</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
+                                    <a href="forms/advanced.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Advanced Elements</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/editors.html" class="nav-link">
+                                    <a href="forms/editors.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Editors</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/validation.html" class="nav-link">
+                                    <a href="forms/validation.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Validation</p>
                                     </a>
@@ -478,19 +485,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/tables/simple.html" class="nav-link">
+                                    <a href="tables/simple.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Simple Tables</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link">
+                                    <a href="tables/data.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>DataTables</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <a href="tables/jsgrid.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>jsGrid</p>
                                     </a>
@@ -499,8 +506,8 @@
                         </li>
                         <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>calendar" class="nav-link">
-                                <i class="nav-icon fas fa-calendar-alt"></i>
+                            <a href="<?php echo base_url(); ?>calendar" class="nav-link active">
+                                <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Calendar
                                     <span class="badge badge-info right">2</span>
@@ -508,7 +515,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="gallery.html" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
@@ -516,7 +523,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/kanban.html" class="nav-link">
+                            <a href="kanban.html" class="nav-link">
                                 <i class="nav-icon fas fa-columns"></i>
                                 <p>
                                     Kanban Board
@@ -533,19 +540,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                    <a href="mailbox/mailbox.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inbox</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/compose.html" class="nav-link">
+                                    <a href="mailbox/compose.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Compose</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                    <a href="mailbox/read-mail.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Read</p>
                                     </a>
@@ -562,61 +569,61 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/examples/invoice.html" class="nav-link">
+                                    <a href="examples/invoice.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Invoice</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/profile.html" class="nav-link">
+                                    <a href="examples/profile.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/e-commerce.html" class="nav-link">
+                                    <a href="examples/e-commerce.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>E-commerce</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/projects.html" class="nav-link">
+                                    <a href="examples/projects.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Projects</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-add.html" class="nav-link">
+                                    <a href="examples/project-add.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Add</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-edit.html" class="nav-link">
+                                    <a href="examples/project-edit.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Edit</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-detail.html" class="nav-link">
+                                    <a href="examples/project-detail.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Detail</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/contacts.html" class="nav-link">
+                                    <a href="examples/contacts.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contacts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/faq.html" class="nav-link">
+                                    <a href="examples/faq.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>FAQ</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/contact-us.html" class="nav-link">
+                                    <a href="examples/contact-us.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contact us</p>
                                     </a>
@@ -642,25 +649,25 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="pages/examples/login.html" class="nav-link">
+                                            <a href="examples/login.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Login v1</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/register.html" class="nav-link">
+                                            <a href="examples/register.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Register v1</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/forgot-password.html" class="nav-link">
+                                            <a href="examples/forgot-password.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Forgot Password v1</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/recover-password.html" class="nav-link">
+                                            <a href="examples/recover-password.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Recover Password v1</p>
                                             </a>
@@ -677,25 +684,25 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="pages/examples/login-v2.html" class="nav-link">
+                                            <a href="examples/login-v2.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Login v2</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/register-v2.html" class="nav-link">
+                                            <a href="examples/register-v2.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Register v2</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/forgot-password-v2.html" class="nav-link">
+                                            <a href="examples/forgot-password-v2.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Forgot Password v2</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages/examples/recover-password-v2.html" class="nav-link">
+                                            <a href="examples/recover-password-v2.html" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Recover Password v2</p>
                                             </a>
@@ -703,49 +710,49 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/lockscreen.html" class="nav-link">
+                                    <a href="examples/lockscreen.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lockscreen</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                                    <a href="examples/legacy-user-menu.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Legacy User Menu</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/language-menu.html" class="nav-link">
+                                    <a href="examples/language-menu.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Language Menu</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/404.html" class="nav-link">
+                                    <a href="examples/404.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Error 404</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/500.html" class="nav-link">
+                                    <a href="examples/500.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Error 500</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/pace.html" class="nav-link">
+                                    <a href="examples/pace.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pace</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/blank.html" class="nav-link">
+                                    <a href="examples/blank.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Blank Page</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="starter.html" class="nav-link">
+                                    <a href="../starter.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Starter Page</p>
                                     </a>
@@ -762,13 +769,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/search/simple.html" class="nav-link">
+                                    <a href="search/simple.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Simple Search</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/search/enhanced.html" class="nav-link">
+                                    <a href="search/enhanced.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Enhanced</p>
                                     </a>
@@ -777,7 +784,7 @@
                         </li>
                         <li class="nav-header">MISCELLANEOUS</li>
                         <li class="nav-item">
-                            <a href="iframe.html" class="nav-link">
+                            <a href="../iframe.html" class="nav-link">
                                 <i class="nav-icon fas fa-ellipsis-h"></i>
                                 <p>Tabbed IFrame Plugin</p>
                             </a>
@@ -881,294 +888,289 @@
 
         <div class="content-wrapper">
 
-            <div class="content-header">
+            <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard v3</h1>
+                            <h1>Calendar</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v3</li>
+                                <li class="breadcrumb-item active">Calendar</li>
                             </ol>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-
-            <div class="content">
+            <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="d-flex justify-content-between">
-                                        <h3 class="card-title">Online Store Visitors</h3>
-                                        <a href="javascript:void(0);">View Report</a>
+                        <div class="col-md-3">
+                            <div class="sticky-top mb-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Draggable Events</h4>
                                     </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <p class="d-flex flex-column">
-                                            <span class="text-bold text-lg">820</span>
-                                            <span>Visitors Over Time</span>
-                                        </p>
-                                        <p class="ml-auto d-flex flex-column text-right">
-                                            <span class="text-success">
-                                                <i class="fas fa-arrow-up"></i> 12.5%
-                                            </span>
-                                            <span class="text-muted">Since last week</span>
-                                        </p>
+                                    <div class="card-body">
+
+                                        <div id="external-events">
+                                            <div class="external-event bg-success">Lunch</div>
+                                            <div class="external-event bg-warning">Go home</div>
+                                            <div class="external-event bg-info">Do homework</div>
+                                            <div class="external-event bg-primary">Work on UI design</div>
+                                            <div class="external-event bg-danger">Sleep tight</div>
+                                            <div class="checkbox">
+                                                <label for="drop-remove">
+                                                    <input type="checkbox" id="drop-remove">
+                                                    remove after drop
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="position-relative mb-4">
-                                        <canvas id="visitors-chart" height="200"></canvas>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Create Event</h3>
                                     </div>
-                                    <div class="d-flex flex-row justify-content-end">
-                                        <span class="mr-2">
-                                            <i class="fas fa-square text-primary"></i> This Week
-                                        </span>
-                                        <span>
-                                            <i class="fas fa-square text-gray"></i> Last Week
-                                        </span>
+                                    <div class="card-body">
+                                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                            <ul class="fc-color-picker" id="color-chooser">
+                                                <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                                                <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+                                            <div class="input-group-append">
+                                                <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">Products</h3>
-                                    <div class="card-tools">
-                                        <a href="#" class="btn btn-tool btn-sm">
-                                            <i class="fas fa-download"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-tool btn-sm">
-                                            <i class="fas fa-bars"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-striped table-valign-middle">
-                                        <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Price</th>
-                                                <th>Sales</th>
-                                                <th>More</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                                    Some Product
-                                                </td>
-                                                <td>$13 USD</td>
-                                                <td>
-                                                    <small class="text-success mr-1">
-                                                        <i class="fas fa-arrow-up"></i>
-                                                        12%
-                                                    </small>
-                                                    12,000 Sold
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="text-muted">
-                                                        <i class="fas fa-search"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                                    Another Product
-                                                </td>
-                                                <td>$29 USD</td>
-                                                <td>
-                                                    <small class="text-warning mr-1">
-                                                        <i class="fas fa-arrow-down"></i>
-                                                        0.5%
-                                                    </small>
-                                                    123,234 Sold
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="text-muted">
-                                                        <i class="fas fa-search"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                                    Amazing Product
-                                                </td>
-                                                <td>$1,230 USD</td>
-                                                <td>
-                                                    <small class="text-danger mr-1">
-                                                        <i class="fas fa-arrow-down"></i>
-                                                        3%
-                                                    </small>
-                                                    198 Sold
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="text-muted">
-                                                        <i class="fas fa-search"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                                                    Perfect Item
-                                                    <span class="badge bg-danger">NEW</span>
-                                                </td>
-                                                <td>$199 USD</td>
-                                                <td>
-                                                    <small class="text-success mr-1">
-                                                        <i class="fas fa-arrow-up"></i>
-                                                        63%
-                                                    </small>
-                                                    87 Sold
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="text-muted">
-                                                        <i class="fas fa-search"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
                         </div>
 
-                        <div class="col-lg-6">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="d-flex justify-content-between">
-                                        <h3 class="card-title">Sales</h3>
-                                        <a href="javascript:void(0);">View Report</a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <p class="d-flex flex-column">
-                                            <span class="text-bold text-lg">$18,230.00</span>
-                                            <span>Sales Over Time</span>
-                                        </p>
-                                        <p class="ml-auto d-flex flex-column text-right">
-                                            <span class="text-success">
-                                                <i class="fas fa-arrow-up"></i> 33.1%
-                                            </span>
-                                            <span class="text-muted">Since last month</span>
-                                        </p>
-                                    </div>
+                        <div class="col-md-9">
+                            <div class="card card-primary">
+                                <div class="card-body p-0">
 
-                                    <div class="position-relative mb-4">
-                                        <canvas id="sales-chart" height="200"></canvas>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-end">
-                                        <span class="mr-2">
-                                            <i class="fas fa-square text-primary"></i> This year
-                                        </span>
-                                        <span>
-                                            <i class="fas fa-square text-gray"></i> Last year
-                                        </span>
-                                    </div>
+                                    <div id="calendar"></div>
                                 </div>
+
                             </div>
 
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">Online Store Overview</h3>
-                                    <div class="card-tools">
-                                        <a href="#" class="btn btn-sm btn-tool">
-                                            <i class="fas fa-download"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-tool">
-                                            <i class="fas fa-bars"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                        <p class="text-success text-xl">
-                                            <i class="ion ion-ios-refresh-empty"></i>
-                                        </p>
-                                        <p class="d-flex flex-column text-right">
-                                            <span class="font-weight-bold">
-                                                <i class="ion ion-android-arrow-up text-success"></i> 12%
-                                            </span>
-                                            <span class="text-muted">CONVERSION RATE</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                                        <p class="text-warning text-xl">
-                                            <i class="ion ion-ios-cart-outline"></i>
-                                        </p>
-                                        <p class="d-flex flex-column text-right">
-                                            <span class="font-weight-bold">
-                                                <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                                            </span>
-                                            <span class="text-muted">SALES RATE</span>
-                                        </p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center mb-0">
-                                        <p class="text-danger text-xl">
-                                            <i class="ion ion-ios-people-outline"></i>
-                                        </p>
-                                        <p class="d-flex flex-column text-right">
-                                            <span class="font-weight-bold">
-                                                <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                                            </span>
-                                            <span class="text-muted">REGISTRATION RATE</span>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
 
                     </div>
 
                 </div>
-
-            </div>
+            </section>
 
         </div>
 
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
+            </div>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
 
         <aside class="control-sidebar control-sidebar-dark">
 
         </aside>
 
-
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
     </div>
-
 
 
     <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 
     <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/js/adminlte.js?v=3.2.0"></script>
+    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/chart.js/Chart.min.js"></script>
+    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/js/adminlte.min.js?v=3.2.0"></script>
+
+    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
+    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/plugins/fullcalendar/main.js"></script>
 
     <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/js/demo.js"></script>
 
-    <script src="<?= base_url('assets'); ?>/vendor/AdminLTE-3.2.0/dist/js/pages/dashboard3.js"></script>
+    <script>
+        $(function() {
+
+            /* initialize the external events
+             -----------------------------------------------------------------*/
+            function ini_events(ele) {
+                ele.each(function() {
+
+                    // create an Event Object (https://fullcalendar.io/docs/event-object)
+                    // it doesn't need to have a start or end
+                    var eventObject = {
+                        title: $.trim($(this).text()) // use the element's text as the event title
+                    }
+
+                    // store the Event Object in the DOM element so we can get to it later
+                    $(this).data('eventObject', eventObject)
+
+                    // make the event draggable using jQuery UI
+                    $(this).draggable({
+                        zIndex: 1070,
+                        revert: true, // will cause the event to go back to its
+                        revertDuration: 0 //  original position after the drag
+                    })
+
+                })
+            }
+
+            ini_events($('#external-events div.external-event'))
+
+            /* initialize the calendar
+             -----------------------------------------------------------------*/
+            //Date for the calendar events (dummy data)
+            var date = new Date()
+            var d = date.getDate(),
+                m = date.getMonth(),
+                y = date.getFullYear()
+
+            var Calendar = FullCalendar.Calendar;
+            var Draggable = FullCalendar.Draggable;
+
+            var containerEl = document.getElementById('external-events');
+            var checkbox = document.getElementById('drop-remove');
+            var calendarEl = document.getElementById('calendar');
+
+            // initialize the external events
+            // -----------------------------------------------------------------
+
+            new Draggable(containerEl, {
+                itemSelector: '.external-event',
+                eventData: function(eventEl) {
+                    return {
+                        title: eventEl.innerText,
+                        backgroundColor: window.getComputedStyle(eventEl, null).getPropertyValue('background-color'),
+                        borderColor: window.getComputedStyle(eventEl, null).getPropertyValue('background-color'),
+                        textColor: window.getComputedStyle(eventEl, null).getPropertyValue('color'),
+                    };
+                }
+            });
+
+            var calendar = new Calendar(calendarEl, {
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                themeSystem: 'bootstrap',
+                //Random default events
+                events: [{
+                        title: 'All Day Event',
+                        start: new Date(y, m, 1),
+                        backgroundColor: '#f56954', //red
+                        borderColor: '#f56954', //red
+                        allDay: true
+                    },
+                    {
+                        title: 'Long Event',
+                        start: new Date(y, m, d - 5),
+                        end: new Date(y, m, d - 2),
+                        backgroundColor: '#f39c12', //yellow
+                        borderColor: '#f39c12' //yellow
+                    },
+                    {
+                        title: 'Meeting',
+                        start: new Date(y, m, d, 10, 30),
+                        allDay: false,
+                        backgroundColor: '#0073b7', //Blue
+                        borderColor: '#0073b7' //Blue
+                    },
+                    {
+                        title: 'Lunch',
+                        start: new Date(y, m, d, 12, 0),
+                        end: new Date(y, m, d, 14, 0),
+                        allDay: false,
+                        backgroundColor: '#00c0ef', //Info (aqua)
+                        borderColor: '#00c0ef' //Info (aqua)
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: new Date(y, m, d + 1, 19, 0),
+                        end: new Date(y, m, d + 1, 22, 30),
+                        allDay: false,
+                        backgroundColor: '#00a65a', //Success (green)
+                        borderColor: '#00a65a' //Success (green)
+                    },
+                    {
+                        title: 'Click for Google',
+                        start: new Date(y, m, 28),
+                        end: new Date(y, m, 29),
+                        url: 'https://www.google.com/',
+                        backgroundColor: '#3c8dbc', //Primary (light-blue)
+                        borderColor: '#3c8dbc' //Primary (light-blue)
+                    }
+                ],
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar !!!
+                drop: function(info) {
+                    // is the "remove after drop" checkbox checked?
+                    if (checkbox.checked) {
+                        // if so, remove the element from the "Draggable Events" list
+                        info.draggedEl.parentNode.removeChild(info.draggedEl);
+                    }
+                }
+            });
+
+            calendar.render();
+            // $('#calendar').fullCalendar()
+
+            /* ADDING EVENTS */
+            var currColor = '#3c8dbc' //Red by default
+            // Color chooser button
+            $('#color-chooser > li > a').click(function(e) {
+                e.preventDefault()
+                // Save color
+                currColor = $(this).css('color')
+                // Add color effect to button
+                $('#add-new-event').css({
+                    'background-color': currColor,
+                    'border-color': currColor
+                })
+            })
+            $('#add-new-event').click(function(e) {
+                e.preventDefault()
+                // Get value and make sure it is not null
+                var val = $('#new-event').val()
+                if (val.length == 0) {
+                    return
+                }
+
+                // Create events
+                var event = $('<div />')
+                event.css({
+                    'background-color': currColor,
+                    'border-color': currColor,
+                    'color': '#fff'
+                }).addClass('external-event')
+                event.text(val)
+                $('#external-events').prepend(event)
+
+                // Add draggable funtionality
+                ini_events(event)
+
+                // Remove event from text input
+                $('#new-event').val('')
+            })
+        })
+    </script>
 </body>
 
 </html>
