@@ -59,3 +59,6 @@ $route['dashboard2'] = "dashboard2";
 $route['dashboard3'] = "dashboard3";
 
 $route['widgets'] = "widgets";
+
+/* Examples*/
+$route['calendar'] = "calendar";
