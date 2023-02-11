@@ -1,2 +1,2 @@
 # adminlte_codeigniter_3
-AdminLTE integration with Codeigniter 3
+AdminLTE Dashboard integration with Codeigniter 3
